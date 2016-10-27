@@ -26,6 +26,9 @@ class Master(models.Model):
     retroID = models.CharField(null = True, blank = True, max_length= 50)
     bbrefID = models.CharField(null = True ,blank = True, max_length = 50)
 
+    def __str__(self):
+        return self.nameFirst + self.nameLast
+
 class Batting(models.Model):
     player = models.ForeignKey(Master)
     year = models.CharField(null = True ,blank = True, max_length = 50)
@@ -49,6 +52,12 @@ class Batting(models.Model):
     sac_hits = models.CharField(null = True ,blank = True, max_length = 50)
     sac_flies = models.CharField(null = True ,blank = True, max_length = 50)
     double_plays = models.CharField(null = True ,blank = True, max_length = 50)
+
+    @property
+    def obp(self):
+        if int(self.at_bats) == 0 or int(self.hits) + int(self.walks) == 0:
+            return "0"
+        return str(int(self.at_bats) / (int(self.hits) + int(self.walks)) * .1)
 
 class Fielding(models.Model):
     player = models.ForeignKey(Master)

@@ -5,33 +5,33 @@ from stats.serializers import MasterSerializer, PitcherSerializer, FieldingSeria
 
 
 class MasterListCreateAPIView(ListCreateAPIView):
-    queryset = Master.objects.all()[:10]
+    queryset = Master.objects.all()
     serializer_class = MasterSerializer
     #paginate
 class MasterDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Master.objects.all()[:10]
+    queryset = Master.objects.all()
     serializer_class = MasterSerializer
 
 class BattingListCreateAPIView(ListCreateAPIView):
-    queryset = Batting.objects.all()[:10]
+    queryset = Batting.objects.all()
     serializer_class = BattingSerializer
 
 class BattingDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Batting.objects.all()[:10]
+    queryset = Batting.objects.all()
     serializer_class = BattingSerializer
 
 class PitcherListCreateAPIView(ListCreateAPIView):
-    queryset = Pitcher.objects.all()[:10]
+    queryset = Pitcher.objects.all()
     serializer_class = PitcherSerializer
 
 class PitcherDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Pitcher.objects.all()[:10]
+    queryset = Pitcher.objects.all()
     serializer_class = PitcherSerializer
 
 class FieldingListCreateAPIView(ListCreateAPIView):
-    queryset = Fielding.objects.all()[:10]
+    queryset = Fielding.objects.all()
     serializer_class = FieldingSerializer
 
 class FieldingDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Fielding.objects.all()[:10]
+    queryset = Fielding.objects.all()
     serializer_class = FieldingSerializer
